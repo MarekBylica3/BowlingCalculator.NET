@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using BowlingApp;
+using BowlingApp.Src;
 using System.Collections.Generic;
 
 namespace Tests
