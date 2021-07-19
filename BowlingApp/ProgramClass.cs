@@ -1,6 +1,7 @@
 ﻿using System;
 using BowlingApp.Src;
 using System.Reflection;
+using BowlingApp.Resources;
 
 namespace BowlingApp
 {
@@ -32,6 +33,12 @@ namespace BowlingApp
                 {
                     var input = Console.ReadLine();
                     textFile = _textFileLoader.LoadFile(input, true);
+
+                    if (textFile.Length <= 0)
+                    {
+                        Console.WriteLine(BowlingResources.FileSelectionError);
+                    }
+
                 } while (textFile.Length <= 0);
             }
 
@@ -70,7 +77,7 @@ namespace BowlingApp
             Console.WriteLine("There is also an example file created in the project directory - test.txt");
             Console.WriteLine("This file will be loaded as a default if you just click enter or your file will not be found.");
             Console.WriteLine();
-            Console.WriteLine("Enter the name of the file from which the data will be loaded: ");
+            Console.WriteLine(BowlingResources.EnterFileName);
         }
 
         private void CreateConsoleGap(int writeLineCount)

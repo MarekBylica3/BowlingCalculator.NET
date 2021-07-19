@@ -61,6 +61,15 @@ namespace BowlingApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter the name of the file from which the data will be loaded:.
+        /// </summary>
+        internal static string EnterFileName {
+            get {
+                return ResourceManager.GetString("EnterFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File is empty or has incorrect format.
         /// </summary>
         internal static string FileFormatValidationError {
@@ -75,6 +84,15 @@ namespace BowlingApp.Resources {
         internal static string FileLoadingError {
             get {
                 return ResourceManager.GetString("FileLoadingError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The selected file does not exist or is empty. Try again:.
+        /// </summary>
+        internal static string FileSelectionError {
+            get {
+                return ResourceManager.GetString("FileSelectionError", resourceCulture);
             }
         }
         

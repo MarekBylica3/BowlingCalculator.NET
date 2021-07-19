@@ -9,7 +9,7 @@ namespace BowlingApp.Src
 {
     public class BowlingTextFileParser : IBowlingDataParser
     {
-        private readonly string FIELD_DELIMITER = Environment.NewLine;
+        private readonly string FIELD_DELIMITER = "\n";
         private readonly string VALUES_DELIMITER = ",";
 
         private readonly IBowlingTextFileValidator _bowlingTextFileValidator;
@@ -23,6 +23,13 @@ namespace BowlingApp.Src
 
         public Result<List<Result<Player>>> Parse(string textFile)
         {
+            var lineBreaksToReplace = new string[] { "\r\n", "\r" };
+
+            foreach (var lineBreak in lineBreaksToReplace)
+            {
+                textFile = textFile.Replace(lineBreak, FIELD_DELIMITER);
+            }
+
             var lines = textFile.Split(FIELD_DELIMITER);
             return Parse(lines);
         }
